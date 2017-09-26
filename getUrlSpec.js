@@ -21,65 +21,13 @@ describe('Protractor Demo App', function() {
 
     element.all(by.css("button[aria-label*='" + appBuild + "'][aria-label*='mp/smoke']")).first().click();
     browser.getCurrentUrl().then( function( url ) {
-    report = report.concat ("******* MP E2E Daily Regression Run Results - Build " + browser.params.build + " *******");
-	  report = report.concat("\nmp/smoke\n");
+    report = report.concat ("******* MP E2E Regression Run Results - Build " + browser.params.build + " *******");
+	  report = report.concat("\nmp/nightly\n");
 	  report = report.concat(url);
-        console.log('mp/smoke')
+        console.log('mp/nightly')
 	//console.log(url);
 	//console.log(report);
 	});
     browser.navigate().back();
-
-    element.all(by.css("button[aria-label*='" + appBuild + "'][aria-label*='api/mp_storefront']")).first().click();
-    browser.getCurrentUrl().then( function( url ) {
-        report = report.concat("\napi/mp_storefront\n");
-        report = report.concat(url);
-        console.log('mp/smoke')
-        //console.log(url);
-        //console.log(report);
-        });
-    browser.navigate().back();
-
-    element.all(by.css("button[aria-label*='" + appBuild + "'][aria-label*='api/mp_reseller']")).first().click();
-    browser.getCurrentUrl().then( function( url ) {
-        report = report.concat("\napi/mp_reseller\n");
-        report = report.concat(url);
-        console.log('mp/smoke')
-        //console.log(url);
-        //console.log(report);
-        });
-    browser.navigate().back();
-
-    element.all(by.css("button[aria-label*='" + appBuild + "'][aria-label*='mp/mp_storefront_regression']")).first().click();
-    browser.getCurrentUrl().then( function( url ) {
-	report = report.concat("\nmp/mp_storefront_regression\n");
-	report = report.concat(url);
-        console.log('mp/mp_storefront_regression');
-	//console.log(url);
-	//console.log(report);
-	});
-    browser.navigate().back();
-
-    element.all(by.css("button[aria-label*='" + appBuild + "'][aria-label*='mp/mp_core_regression']")).first().click();
-    browser.getCurrentUrl().then( function( url ) {
-	report = report.concat("\nmp/mp_core_regression\n");
-	report = report.concat(url);
-        console.log('mp/mp_core_regression');
-	//console.log(url);
-	//console.log(report);
-	});
-    browser.navigate().back();
-
-    element.all(by.css("button[aria-label*='" + appBuild + "'][aria-label*='mp/mp_reseller_regression']")).first().click();
-    browser.getCurrentUrl().then( function( url ) {
-	report = report.concat("\nmp/mp_reseller_regression\n");
-	report = report.concat(url);
-        console.log('mp/mp_reseller_regression');
-	//console.log(url);
-        obj.report = report;
-	console.log(report);
-	});
-    //console.log(report);
-
   },120000);
 })

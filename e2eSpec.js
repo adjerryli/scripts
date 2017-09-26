@@ -15,12 +15,7 @@ describe('Protractor Demo App', function() {
     browser.driver.findElement(by.css("button[class='adb-toolbar--item']")).click();
 
     var helper = require('./helper.js');
-    helper.triggerRun(appBuild,'mp/smoke',runIds);
-    helper.triggerRun(appBuild,'api/mp_storefront',runIds);
-    helper.triggerRun(appBuild,'api/mp_reseller',runIds);
-    helper.triggerRun(appBuild,'mp/mp_storefront_regression',runIds);
-    helper.triggerRun(appBuild,'mp/mp_reseller_regression',runIds);
-    helper.triggerRun(appBuild,'mp/mp_core_regression',runIds);
+    helper.triggerRun(appBuild,'mp/nightly',runIds);
 
   },120000);
 })
